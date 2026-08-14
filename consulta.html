@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultar estado del trámite — Alcaldía Municipal de Acoyapa</title>
+  <meta name="description" content="Consulte el estado de su solicitud de constancia de nacimiento con su número de expediente.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="contenedor">
+      <span>Gobierno de Reconciliación y Unidad Nacional</span>
+      <span>Lun–Vie 8:00 a.m. – 4:00 p.m. | Tel. 2553-0000</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="contenedor header-interno">
+      <a class="marca" href="index.html">
+        <div class="escudo">AMA</div>
+        <div>
+          <h1>Alcaldía Municipal de Acoyapa</h1>
+          <span>Oficina del Registro Civil — Chontales, Nicaragua</span>
+        </div>
+      </a>
+      <button class="boton-menu" id="botonMenu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="principal" id="navPrincipal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="solicitud.html">Solicitar constancia</a></li>
+          <li><a href="consulta.html" class="activo">Consultar estado</a></li>
+          <li><a href="requisitos.html">Requisitos</a></li>
+          <li class="institucional"><a href="admin.html">Área institucional</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <nav class="migas" aria-label="Migas de pan">
+      <a href="index.html">Inicio</a> &rsaquo; Consultar estado
+    </nav>
+
+    <div class="panel-form">
+      <h2>Consulta de estado del trámite</h2>
+      <p class="sub">Ingrese el número de expediente que recibió al enviar su solicitud
+        (formato: ACO-AAAA-0000).</p>
+
+      <form id="formConsulta" novalidate>
+        <div class="grupo-campos">
+          <div class="campo completo">
+            <label for="consultaExpediente">Número de expediente <span class="req">*</span></label>
+            <input type="text" id="consultaExpediente" data-validar="expediente" required
+                   placeholder="ACO-2026-0123" maxlength="13" style="text-transform:uppercase">
+            <span class="ayuda">Lo recibió en pantalla al finalizar su solicitud. Ejemplo: ACO-2026-0123</span>
+            <span class="mensaje-error"></span>
+          </div>
+        </div>
+        <div class="acciones-form">
+          <a class="btn btn-contorno" href="index.html">Volver</a>
+          <button type="submit" class="btn btn-primario">Consultar</button>
+        </div>
+      </form>
+
+      <!-- Resultado de la consulta -->
+      <div class="resultado-consulta" id="resultadoConsulta">
+        <div id="resultadoEncontrado" style="display:none">
+          <h3 style="color:var(--azul); font-size:1.1rem">
+            Estado del expediente <span id="expedienteMostrado"></span>
+          </h3>
+          <div class="resumen" style="margin-bottom:1.2rem">
+            <dl>
+              <div><dt>Solicitante</dt><dd id="infoSolicitante"></dd></div>
+              <div><dt>Cédula</dt><dd id="infoCedula"></dd></div>
+              <div><dt>Persona registrada</dt><dd id="infoRegistrado"></dd></div>
+              <div><dt>Modalidad de entrega</dt><dd id="infoEntrega"></dd></div>
+              <div><dt>Copias solicitadas</dt><dd id="infoCopias"></dd></div>
+              <div><dt>Fecha de solicitud</dt><dd id="infoFecha"></dd></div>
+            </dl>
+          </div>
+          <ul class="linea-tiempo" id="lineaTiempo">
+            <li data-estado="Recibida">
+              <strong>1. Solicitud recibida</strong>
+              <span>El sistema registró su solicitud y asignó el número de expediente.</span>
+            </li>
+            <li data-estado="En revisión">
+              <strong>2. Verificación del registro</strong>
+              <span>La Oficina del Registro Civil verifica los datos del acta de nacimiento.</span>
+            </li>
+            <li data-estado="Lista para entrega">
+              <strong>3. Constancia lista para entrega</strong>
+              <span>Documento disponible según la modalidad de entrega elegida.</span>
+            </li>
+            <li data-estado="Entregada">
+              <strong>4. Constancia entregada</strong>
+              <span>El solicitante recibió la constancia según la modalidad elegida.</span>
+            </li>
+          </ul>
+          <p style="margin-top:1rem; background:var(--azul-claro); border-radius:8px; padding:0.9rem 1.1rem; font-size:0.9rem">
+            <strong>Estado actual:</strong> <span id="mensajeEstado"></span>
+          </p>
+        </div>
+
+        <div id="resultadoNoEncontrado" class="aviso-error" style="display:none;background:#fff3f3;border:1px solid #f0c2c2;border-left:5px solid var(--error);border-radius:8px;padding:1.2rem 1.4rem;text-align:center">
+          <h3 style="color:var(--error);margin-bottom:0.4rem">Expediente no encontrado</h3>
+          <p>No existe una solicitud registrada con el número <strong id="expedienteNoEncontrado"></strong>.</p>
+          <p style="font-size:0.85rem;color:var(--gris-suave);margin-top:0.5rem">Verifique que el número de expediente sea correcto o inicie una nueva solicitud.</p>
+          <br>
+          <a class="btn btn-primario" href="solicitud.html">Nueva solicitud</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <h5>Alcaldía Municipal de Acoyapa</h5>
+          <p>De la Iglesia Católica 2 cuadras al este, Acoyapa, Chontales, Nicaragua.</p>
+        </div>
+        <div>
+          <h5>Trámites</h5>
+          <ul>
+            <li><a href="solicitud.html">Solicitar constancia de nacimiento</a></li>
+            <li><a href="consulta.html">Consultar estado del trámite</a></li>
+            <li><a href="requisitos.html">Requisitos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li>Teléfono: 2553-0000</li>
+            <li>registrocivil@acoyapa.gob.ni</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-legal">Prototipo académico — Proyecto de Arquitectura de Información.
+        No constituye un sitio oficial del Gobierno de Nicaragua.</p>
+    </div>
+  </footer>
+
+  <script src="js/validaciones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

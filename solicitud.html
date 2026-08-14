@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar constancia de nacimiento — Alcaldía Municipal de Acoyapa</title>
+  <meta name="description" content="Formulario en línea para solicitar la constancia de nacimiento ante el Registro Civil de Acoyapa, Chontales.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="contenedor">
+      <span>Gobierno de Reconciliación y Unidad Nacional</span>
+      <span>Lun–Vie 8:00 a.m. – 4:00 p.m. | Tel. 2553-0000</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="contenedor header-interno">
+      <a class="marca" href="index.html">
+        <div class="escudo">AMA</div>
+        <div>
+          <h1>Alcaldía Municipal de Acoyapa</h1>
+          <span>Oficina del Registro Civil — Chontales, Nicaragua</span>
+        </div>
+      </a>
+      <button class="boton-menu" id="botonMenu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="principal" id="navPrincipal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="solicitud.html" class="activo">Solicitar constancia</a></li>
+          <li><a href="consulta.html">Consultar estado</a></li>
+          <li><a href="requisitos.html">Requisitos</a></li>
+          <li class="institucional"><a href="admin.html">Área institucional</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <nav class="migas" aria-label="Migas de pan">
+      <a href="index.html">Inicio</a> &rsaquo; <a href="requisitos.html">Requisitos</a> &rsaquo; Solicitar constancia
+    </nav>
+
+    <div class="panel-form">
+      <h2>Solicitud de constancia de nacimiento</h2>
+      <p class="sub">Complete los tres pasos del formulario. Los campos marcados con
+        <span style="color:var(--error)">*</span> son obligatorios.</p>
+
+      <!-- Indicador de progreso del asistente -->
+      <div class="indicador-pasos" id="indicadorPasos">
+        <div class="paso-ind activo"><div class="punto">1</div>Datos del registro</div>
+        <div class="paso-ind"><div class="punto">2</div>Datos del solicitante</div>
+        <div class="paso-ind"><div class="punto">3</div>Entrega y confirmación</div>
+      </div>
+
+      <form id="asistenteSolicitud" novalidate>
+
+        <!-- ============ PASO 1: DATOS DE LA PERSONA REGISTRADA ============ -->
+        <section class="paso-form visible" aria-label="Paso 1: Datos de la persona registrada">
+          <fieldset>
+            <legend>Datos de la persona registrada</legend>
+            <div class="grupo-campos">
+              <div class="campo">
+                <label for="nombreTitular">Nombres <span class="req">*</span></label>
+                <input type="text" id="nombreTitular" data-validar="nombre" required
+                       placeholder="Ej.: Juan Carlos" autocomplete="given-name">
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="apellidosTitular">Apellidos <span class="req">*</span></label>
+                <input type="text" id="apellidosTitular" data-validar="nombre" required
+                       placeholder="Ej.: Pérez López" autocomplete="family-name">
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="fechaNacimiento">Fecha de nacimiento <span class="req">*</span></label>
+                <input type="date" id="fechaNacimiento" data-validar="fecha-nacimiento" required>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="municipioRegistro">Municipio de inscripción <span class="req">*</span></label>
+                <select id="municipioRegistro" data-validar="seleccion" required>
+                  <option value="">Seleccione…</option>
+                  <option value="acoyapa" selected>Acoyapa</option>
+                  <option value="comalapa">Comalapa</option>
+                  <option value="juigalpa">Juigalpa</option>
+                  <option value="la-libertad">La Libertad</option>
+                  <option value="san-pedro">San Pedro de Lóvago</option>
+                  <option value="santo-domingo">Santo Domingo</option>
+                  <option value="otro">Otro municipio</option>
+                </select>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="numeroActa">Número de acta</label>
+                <input type="text" id="numeroActa" data-validar="numero-acta" inputmode="numeric"
+                       placeholder="Ej.: 2451">
+                <span class="ayuda">Opcional. Agiliza la búsqueda del registro.</span>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="tomoActa">Tomo / libro</label>
+                <input type="text" id="tomoActa" inputmode="numeric" placeholder="Ej.: 12">
+                <span class="ayuda">Opcional.</span>
+              </div>
+              <div class="campo completo">
+                <label for="nombreMadre">Nombre de la madre <span class="req">*</span></label>
+                <input type="text" id="nombreMadre" data-validar="nombre" required
+                       placeholder="Nombres y apellidos completos">
+                <span class="ayuda">Tal como aparece inscrito en el acta de nacimiento.</span>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo completo">
+                <label for="nombrePadre">Nombre del padre</label>
+                <input type="text" id="nombrePadre" data-validar="nombre"
+                       placeholder="Nombres y apellidos completos (si consta en el acta)">
+                <span class="mensaje-error"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="acciones-form">
+            <a class="btn btn-contorno" href="index.html">Cancelar</a>
+            <button type="button" class="btn btn-primario" data-accion="siguiente">Siguiente &rarr;</button>
+          </div>
+        </section>
+
+        <!-- ============ PASO 2: DATOS DEL SOLICITANTE ============ -->
+        <section class="paso-form" aria-label="Paso 2: Datos del solicitante">
+          <fieldset>
+            <legend>Datos del solicitante</legend>
+            <div class="grupo-campos">
+              <div class="campo">
+                <label for="nombreSolicitante">Nombres <span class="req">*</span></label>
+                <input type="text" id="nombreSolicitante" data-validar="nombre" required
+                       placeholder="Ej.: María Fernanda">
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="apellidosSolicitante">Apellidos <span class="req">*</span></label>
+                <input type="text" id="apellidosSolicitante" data-validar="nombre" required
+                       placeholder="Ej.: Ríos Castillo">
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="cedulaSolicitante">Cédula de identidad <span class="req">*</span></label>
+                <input type="text" id="cedulaSolicitante" data-validar="cedula" required
+                       placeholder="001-280690-0001A" maxlength="16">
+                <span class="ayuda">Se completa el formato automáticamente.</span>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="parentesco">Parentesco con la persona registrada <span class="req">*</span></label>
+                <select id="parentesco" data-validar="seleccion" required>
+                  <option value="">Seleccione…</option>
+                  <option value="misma-persona">Soy la misma persona</option>
+                  <option value="madre">Madre</option>
+                  <option value="padre">Padre</option>
+                  <option value="hijo">Hijo(a)</option>
+                  <option value="tutor">Tutor(a) legal</option>
+                </select>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="telefonoSolicitante">Teléfono <span class="req">*</span></label>
+                <input type="tel" id="telefonoSolicitante" data-validar="telefono" required
+                       placeholder="8888-8888" autocomplete="tel">
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="correoSolicitante">Correo electrónico <span class="req">*</span></label>
+                <input type="email" id="correoSolicitante" data-validar="correo" required
+                       placeholder="nombre@correo.com" autocomplete="email">
+                <span class="ayuda">Recibirá las notificaciones del trámite.</span>
+                <span class="mensaje-error"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="acciones-form">
+            <button type="button" class="btn btn-contorno" data-accion="anterior">&larr; Anterior</button>
+            <button type="button" class="btn btn-primario" data-accion="siguiente">Siguiente &rarr;</button>
+          </div>
+        </section>
+
+        <!-- ============ PASO 3: ENTREGA Y CONFIRMACIÓN ============ -->
+        <section class="paso-form" aria-label="Paso 3: Entrega y confirmación">
+          <fieldset>
+            <legend>Modalidad de entrega</legend>
+            <div class="grupo-campos">
+              <div class="campo completo">
+                <label>¿Cómo desea recibir su constancia? <span class="req">*</span></label>
+                <div class="grupo-radio">
+                  <label><input type="radio" name="modalidadEntrega" value="Recoger en ventanilla" required>
+                    Recoger en ventanilla del Registro Civil</label>
+                  <label><input type="radio" name="modalidadEntrega" value="Correo certificado" required>
+                    Envío por correo certificado (C$ 80 adicionales)</label>
+                </div>
+                <span class="mensaje-error"></span>
+              </div>
+              <div class="campo">
+                <label for="numeroCopias">Número de copias <span class="req">*</span></label>
+                <select id="numeroCopias" required>
+                  <option value="1" selected>1 copia (C$ 50.00)</option>
+                  <option value="2">2 copias (C$ 100.00)</option>
+                  <option value="3">3 copias (C$ 150.00)</option>
+                  <option value="4">4 copias (C$ 200.00)</option>
+                </select>
+                <span class="ayuda">El pago se realiza al momento de la entrega.</span>
+              </div>
+              <div class="campo">
+                <label for="motivo">Motivo de la solicitud</label>
+                <select id="motivo">
+                  <option value="" selected>Seleccione…</option>
+                  <option value="tramite-escolar">Trámite escolar</option>
+                  <option value="tramite-laboral">Trámite laboral</option>
+                  <option value="pasaporte">Pasaporte / migración</option>
+                  <option value="matrimonio">Matrimonio</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Resumen de su solicitud</legend>
+            <div class="resumen">
+              <dl>
+                <div><dt>Persona registrada</dt><dd id="resNombre"></dd></div>
+                <div><dt>Fecha de nacimiento</dt><dd id="resFechaNac"></dd></div>
+                <div><dt>Municipio de inscripción</dt><dd id="resMunicipio"></dd></div>
+                <div><dt>Número de acta</dt><dd id="resActa"></dd></div>
+                <div><dt>Solicitante</dt><dd id="resSolicitante"></dd></div>
+                <div><dt>Cédula</dt><dd id="resCedula"></dd></div>
+              <div><dt>Parentesco</dt><dd id="resParentesco"></dd></div>
+              <div><dt>Modalidad de entrega</dt><dd id="resEntrega"></dd></div>
+              <div><dt>Número de copias</dt><dd id="resCopias"></dd></div>
+            </dl>
+          </div>
+            <p style="font-size:0.85rem;color:var(--gris-suave)">
+              Al enviar, declaro que la información proporcionada es verdadera y acepto que la
+              Alcaldía Municipal de Acoyapa la utilice únicamente para gestionar este trámite.
+            </p>
+          </fieldset>
+
+          <div class="acciones-form">
+            <button type="button" class="btn btn-contorno" data-accion="anterior">&larr; Anterior</button>
+            <button type="submit" class="btn btn-primario">Enviar solicitud</button>
+          </div>
+        </section>
+
+      </form>
+
+      <!-- Confirmación final (se muestra tras el envío) -->
+      <div class="aviso-exito" id="avisoExito" style="display:none">
+        <svg class="icono-exito" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3>Solicitud enviada correctamente</h3>
+        <p>Guarde su número de expediente. Con él podrá consultar el estado de su trámite en cualquier momento.</p>
+        <p class="expediente" id="numeroExpediente">ACO-0000-0000</p>
+        <p>Recibirá notificaciones en el correo electrónico registrado cuando el trámite avance.</p>
+        <br>
+        <div class="hero-ctas" style="justify-content:center">
+          <a class="btn btn-primario" href="consulta.html">Consultar estado</a>
+          <a class="btn btn-contorno" href="index.html">Volver al inicio</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <h5>Alcaldía Municipal de Acoyapa</h5>
+          <p>De la Iglesia Católica 2 cuadras al este, Acoyapa, Chontales, Nicaragua.</p>
+        </div>
+        <div>
+          <h5>Trámites</h5>
+          <ul>
+            <li><a href="solicitud.html">Solicitar constancia de nacimiento</a></li>
+            <li><a href="consulta.html">Consultar estado del trámite</a></li>
+            <li><a href="requisitos.html">Requisitos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li>Teléfono: 2553-0000</li>
+            <li>registrocivil@acoyapa.gob.ni</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-legal">Prototipo académico — Proyecto de Arquitectura de Información.
+        No constituye un sitio oficial del Gobierno de Nicaragua.</p>
+    </div>
+  </footer>
+
+  <script src="js/validaciones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

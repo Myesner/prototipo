@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área institucional — Alcaldía Municipal de Acoyapa</title>
+  <meta name="description" content="Panel administrativo para funcionarios del Registro Civil de Acoyapa. Gestión de solicitudes de constancia de nacimiento.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="contenedor">
+      <span>Gobierno de Reconciliación y Unidad Nacional</span>
+      <span>Lun–Vie 8:00 a.m. – 4:00 p.m. | Tel. 2553-0000</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="contenedor header-interno">
+      <a class="marca" href="index.html">
+        <div class="escudo">AMA</div>
+        <div>
+          <h1>Alcaldía Municipal de Acoyapa</h1>
+          <span>Oficina del Registro Civil — Chontales, Nicaragua</span>
+        </div>
+      </a>
+      <button class="boton-menu" id="botonMenu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="principal" id="navPrincipal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="solicitud.html">Solicitar constancia</a></li>
+          <li><a href="consulta.html">Consultar estado</a></li>
+          <li><a href="requisitos.html">Requisitos</a></li>
+          <li class="institucional"><a href="admin.html" class="activo">Área institucional</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <nav class="migas" aria-label="Migas de pan">
+      <a href="index.html">Inicio</a> &rsaquo; Área institucional
+    </nav>
+
+    <div class="panel-form panel-admin">
+
+      <!-- Login -->
+      <section id="seccionLogin">
+        <h2>Área institucional</h2>
+        <p class="sub">Acceso exclusivo para funcionarios del Registro Civil de Acoyapa.</p>
+        <p class="login-inst">Para efectos de este prototipo utilice: usuario <strong>admin</strong> y contraseña <strong>admin123</strong>.</p>
+
+        <form id="formLogin" novalidate>
+          <div class="grupo-campos">
+            <div class="campo">
+              <label for="usuarioAdmin">Usuario <span class="req">*</span></label>
+              <input type="text" id="usuarioAdmin" data-validar="admin-usuario" required
+                     placeholder="admin" autocomplete="username">
+              <span class="mensaje-error"></span>
+            </div>
+            <div class="campo">
+              <label for="claveAdmin">Contraseña <span class="req">*</span></label>
+              <input type="password" id="claveAdmin" data-validar="admin-clave" required
+                     placeholder="••••••" autocomplete="current-password">
+              <span class="mensaje-error"></span>
+            </div>
+          </div>
+          <div class="acciones-form" style="margin-top:1.2rem">
+            <a class="btn btn-contorno" href="index.html">Volver al inicio</a>
+            <button type="submit" class="btn btn-primario">Ingresar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Dashboard -->
+      <section id="seccionDashboard" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem">
+          <h2>Panel de gestión de trámites</h2>
+          <button type="button" class="btn btn-peligro" id="btnLogout">Cerrar sesión</button>
+        </div>
+
+        <div class="resumen-stats" id="resumenStats">
+          <!-- Se llena con JavaScript -->
+        </div>
+
+        <div class="tabla-contenedor">
+          <table class="tabla-solicitudes" id="tablaSolicitudes">
+            <thead>
+              <tr>
+                <th>Expediente</th>
+                <th>Registrado</th>
+                <th>Solicitante</th>
+                <th>Cédula</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Modalidad</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpoTablaSolicitudes">
+              <!-- Se llena con JavaScript -->
+            </tbody>
+          </table>
+          <div class="mensaje-vacio" id="mensajeVacio" style="display:none">
+            No hay solicitudes registradas en el sistema.
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <h5>Alcaldía Municipal de Acoyapa</h5>
+          <p>De la Iglesia Católica 2 cuadras al este, Acoyapa, Chontales, Nicaragua.</p>
+          <p>Horario de atención presencial: lunes a viernes, 8:00 a.m. – 4:00 p.m.</p>
+        </div>
+        <div>
+          <h5>Trámites</h5>
+          <ul>
+            <li><a href="solicitud.html">Solicitar constancia de nacimiento</a></li>
+            <li><a href="consulta.html">Consultar estado del trámite</a></li>
+            <li><a href="requisitos.html">Requisitos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li>Teléfono: 2553-0000</li>
+            <li>registrocivil@acoyapa.gob.ni</li>
+            <li>Ventanilla del Registro Civil, planta baja</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-legal">Prototipo académico — Proyecto de Arquitectura de Información.
+        No constituye un sitio oficial del Gobierno de Nicaragua.</p>
+    </div>
+  </footer>
+
+  <script src="js/validaciones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
