@@ -539,6 +539,16 @@ legend {
   margin-bottom: 1.2rem;
 }
 
+.nota-prototipo {
+  font-size: 0.82rem;
+  color: var(--gris-suave);
+  background: #f8fafc;
+  border-left: 3px solid var(--dorado);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
 /* Tabla de solicitudes */
 .tabla-contenedor {
   overflow-x: auto;

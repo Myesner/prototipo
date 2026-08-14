@@ -98,7 +98,9 @@ npx serve .
 
 ### Como funcionario administrativo
 
-1. Ir a **Área institucional** en la navegación o abrir `admin.html`.
+1. Abrir directamente la URL `admin.html` (por ejemplo, `http://localhost:8000/admin.html`).
+   El enlace no aparece en la navegación pública porque el portal ciudadano y el backoffice
+   administrativo serían sistemas separados en una implementación real.
 2. Ingresar las credenciales por defecto:
    - **Usuario:** `admin`
    - **Contraseña:** `admin123`
@@ -144,6 +146,7 @@ Inicio
 ├── Consultar estado
 │   └── Resultado de la consulta
 ├── Requisitos
-└── Área institucional (admin)
-    └── Login → Dashboard de solicitudes
+
+> **Área institucional (admin):** en el prototipo se accede directamente a `admin.html` con fines
+> demostrativos. En producción sería un backoffice separado, no vinculado desde el portal ciudadano.
 ```
