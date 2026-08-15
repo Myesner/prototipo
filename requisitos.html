@@ -25,13 +25,20 @@
           <span>Oficina del Registro Civil — Chontales, Nicaragua</span>
         </div>
       </a>
-      <button class="boton-menu" id="botonMenu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button class="boton-menu" id="botonMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="navPrincipal">
+        <svg class="icono-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
       <nav class="principal" id="navPrincipal" aria-label="Navegación principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="solicitud.html">Solicitar constancia</a></li>
           <li><a href="consulta.html">Consultar estado</a></li>
           <li><a href="requisitos.html" class="activo">Requisitos</a></li>
+          <li class="institucional"><a href="admin.html">Área institucional</a></li>
         </ul>
       </nav>
     </div>
@@ -100,30 +107,42 @@
   <footer>
     <div class="contenedor">
       <div class="footer-grid">
-        <div>
+        <div class="footer-col footer-institucion">
           <h5>Alcaldía Municipal de Acoyapa</h5>
-          <p>De la Iglesia Católica 2 cuadras al este, Acoyapa, Chontales, Nicaragua.</p>
-          <p>Horario de atención presencial: lunes a viernes, 8:00 a.m. – 4:00 p.m.</p>
+          <p class="footer-direccion">De la Iglesia Católica 2 cuadras al este, Acoyapa, Chontales, Nicaragua.</p>
+          <p class="footer-horario">Horario de atención presencial: lunes a viernes, 8:00 a.m. – 4:00 p.m.</p>
         </div>
-        <div>
-          <h5>Trámites</h5>
+        <div class="footer-col">
+          <h5>Trámites en línea</h5>
           <ul>
             <li><a href="solicitud.html">Solicitar constancia de nacimiento</a></li>
             <li><a href="consulta.html">Consultar estado del trámite</a></li>
             <li><a href="requisitos.html">Requisitos</a></li>
           </ul>
         </div>
-        <div>
+        <div class="footer-col">
           <h5>Contacto</h5>
           <ul>
-            <li>Teléfono: 2553-0000</li>
-            <li>registrocivil@acoyapa.gob.ni</li>
+            <li><a href="tel:2553-0000">Teléfono: 2553-0000</a></li>
+            <li><a href="mailto:registrocivil@acoyapa.gob.ni">registrocivil@acoyapa.gob.ni</a></li>
             <li>Ventanilla del Registro Civil, planta baja</li>
           </ul>
         </div>
+        <div class="footer-col footer-legal-col">
+          <h5>Información legal</h5>
+          <p>Prototipo académico — Proyecto de Arquitectura de Información. No constituye un sitio oficial del Gobierno de Nicaragua.</p>
+          <p class="footer-actualizacion">Última actualización: 2026</p>
+        </div>
       </div>
-      <p class="footer-legal">Prototipo académico — Proyecto de Arquitectura de Información.
-        No constituye un sitio oficial del Gobierno de Nicaragua.</p>
+      <div class="footer-bottom">
+        <a href="#" class="volver-arriba" id="volverArriba">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+          Volver arriba
+        </a>
+        <span class="footer-copy">© 2026 Alcaldía Municipal de Acoyapa</span>
+      </div>
     </div>
   </footer>
 

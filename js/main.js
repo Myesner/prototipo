@@ -60,6 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
     botonMenu.addEventListener("click", () => {
       const abierto = navPrincipal.classList.toggle("abierto");
       botonMenu.setAttribute("aria-expanded", abierto);
+      botonMenu.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+    });
+  }
+
+  /* ---------- Volver arriba ---------- */
+  const volverArriba = document.getElementById("volverArriba");
+  if (volverArriba) {
+    volverArriba.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
